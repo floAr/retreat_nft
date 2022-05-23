@@ -26,7 +26,7 @@
 
 	// get name from svelte load function
 	const mintNow = async () => {
-		
+		fetch('/mint/12345')
 	};
 </script>
 

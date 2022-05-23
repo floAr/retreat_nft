@@ -32,7 +32,9 @@
 	},
 	"type": "module",
 	"dependencies": {
+		"dotenv": "^16.0.1",
 		"ethers": "^5.6.7",
-		"svelte-ethers-store": "^2.3.1"
+		"svelte-ethers-store": "^2.3.1",
+		"svelte-kit": "^1.0.0"
 	}
 }
