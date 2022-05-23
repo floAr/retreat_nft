@@ -1,6 +1,6 @@
 //SPDX-License-Identifier: MIT
 
-// @title: Nifty Island Retreat NFT
+// @title: Nifty Island Legendary Chunkz: Retreat NFT
 // @authors: @spencerobsitnik, Fl0ar, TheWisestOne
 
 //  _ __                  ___     _               
@@ -16,7 +16,7 @@ import "erc721a/contracts/ERC721A.sol";
 import "@openzeppelin/contracts/access/Ownable.sol";
 import "@openzeppelin/contracts/security/ReentrancyGuard.sol";
 
-contract NiftyRetreatNFT is ERC721A, Ownable, ReentrancyGuard {
+contract NiftyChunkz is ERC721A, Ownable, ReentrancyGuard {
 
     string public _tokenUriBase;
     uint256 public _maxTokens = 45;
@@ -26,7 +26,7 @@ contract NiftyRetreatNFT is ERC721A, Ownable, ReentrancyGuard {
         _;
     }
 
-    constructor() ERC721A("Nifty Retreat NFT", "NIFTY") {        
+    constructor() ERC721A("Nifty Chunkz", "CHUNKZ") {        
         // set ipfs base url
         _tokenUriBase = "ipfs://IPFS_BASE_URL";
     }
