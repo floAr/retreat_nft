@@ -19,8 +19,12 @@ import "@openzeppelin/contracts/security/ReentrancyGuard.sol";
 contract NiftyRetreatNFT is ERC721A, Ownable, ReentrancyGuard {
 
     string public _tokenUriBase;
-    uint256 public _maxTokens;
+    uint256 public _maxTokens = 45;
 
+    modifier canMint() {
+        require(totalSupply() + 1 <= _maxTokens, "Supply reached");
+        _;
+    }
 
     constructor() ERC721A("Nifty Retreat NFT", "NIFTY") {        
         // set ipfs base url
@@ -45,11 +49,11 @@ contract NiftyRetreatNFT is ERC721A, Ownable, ReentrancyGuard {
     }
     // ------------------------------------------
 
-    function mint() external payable nonReentrant onlyOwner {
+    function mint() external payable canMint nonReentrant onlyOwner {
         _safeMint(_msgSender(), 1);
     }
 
-    function mintTo(address to) external payable nonReentrant onlyOwner {
+    function mintTo(address to) external payable canMint nonReentrant onlyOwner {
         _safeMint(to, 1);
     }
 
