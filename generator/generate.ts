@@ -4,10 +4,10 @@ import fs from 'fs';
 import path from 'path';
 import { NFTStorage, File } from 'nft.storage';
 
-const width = 100;
-const height = 100;
+const width = 1700;
+const height = 2200;
 const cutoffColor = jimp.rgbaToInt(250, 250, 250, 255);
-const total = 45;
+const total = 100;
 
 const eyeTraitCount = 9;
 const earTraitCount = 9;
@@ -30,11 +30,11 @@ const generateSingle = async (
   mouth: number,
   hat: number
 ) => {
-  const earImage = await jimp.read(`../data/ear/${ear}.png`);
-  const eyeImage = await jimp.read(`../data/eye/${eye}.png`);
-  const noseImage = await jimp.read(`../data/nose/${nose}.png`);
-  const mouthImage = await jimp.read(`../data/mouth/${mouth}.png`);
-  const hatImage = await jimp.read(`../data/hat/${hat}.png`);
+  const earImage = await jimp.read(`../traits/ears/${ear}.png`);
+  const eyeImage = await jimp.read(`../traits/eyes/${eye}.png`);
+  const noseImage = await jimp.read(`../traits/nose/${nose}.png`);
+  const mouthImage = await jimp.read(`../traits/mouth/${mouth}.png`);
+  const hatImage = await jimp.read(`../traits/hat/${hat}.png`);
 
   const image = new jimp(width, height, 0xffffff);
 
@@ -126,7 +126,7 @@ async function generateMetadata() {
     .readFileSync('../_output/imageStorageHash.txt')
     .toString();
 
-  for (let i = 0; i < 45; i++) {
+  for (let i = 0; i < total; i++) {
     const genome = genomes[i];
 
     const ear = genome[0];
@@ -191,3 +191,4 @@ async function main() {
   //   await generateMetadata();
   //   await uploadMetadata();
 }
+main();
