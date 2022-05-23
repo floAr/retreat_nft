@@ -9,21 +9,33 @@ const height = 2200;
 const cutoffColor = jimp.rgbaToInt(250, 250, 250, 255);
 const total = 100;
 
-const eyeTraitCount = 9;
+const eyeTraitCount = 12;
 const earTraitCount = 9;
-const noseTraitCount = 9;
-const mouthTraitCount = 9;
-const hatTraitCount = 9;
+const noseTraitCount = 8;
+const mouthTraitCount = 8;
+const hatTraitCount = 10;
 
 const stack = (color1: number, color2: number) => {
-  if (color1 > cutoffColor) return color2;
-  else if (color2 > cutoffColor) return color1;
-  else {
-    return parseInt(Color(color1).mix(Color(color2)).hex(), 16);
+  const c1 = Color(color1);
+  const c2 = Color(color2);
+  if(c1.luminosity()<c2.luminosity())
+  {
+    return color2;
   }
+  else
+  {
+    return color1;
+  }
+
+  // if (color1 > cutoffColor) return color2;
+  // else if (color2 > cutoffColor) return color1;
+  // else {
+  //   return parseInt(Color(color1).mix(Color(color2)).hex(), 16);
+  // }
 };
 
 const generateSingle = async (
+  id:number,
   ear: number,
   eye: number,
   nose: number,
@@ -36,6 +48,7 @@ const generateSingle = async (
   const mouthImage = await jimp.read(`../traits/mouth/${mouth}.png`);
   const hatImage = await jimp.read(`../traits/hat/${hat}.png`);
 
+  console.log(`Generating ${id}`);
   const image = new jimp(width, height, 0xffffff);
 
   for (let x = 0; x < width; x++) {
@@ -55,7 +68,7 @@ const generateSingle = async (
   }
   // save image
   await image.write(
-    `../_output/images/output_${ear}_${eye}_${nose}_${mouth}_${hat}.png`
+    `../_output/images/${id}_output_${ear}_${eye}_${nose}_${mouth}_${hat}.png`
   );
 };
 
@@ -68,12 +81,20 @@ const generateAll = async () => {
   let mouthArray = Array.from(Array(mouthTraitCount).keys());
   let hatArray = Array.from(Array(hatTraitCount).keys());
 
-  for (let i = 0; i < 45; i++) {
+  for (let i = 0; i < total; i++) {
     if (earArray.length === 0) {
       earArray = Array.from(Array(earTraitCount).keys());
+    }
+    if (eyeArray.length === 0) {
       eyeArray = Array.from(Array(eyeTraitCount).keys());
+    }
+    if (noseArray.length === 0) {
       noseArray = Array.from(Array(noseTraitCount).keys());
+    }
+    if (mouthArray.length === 0) {
       mouthArray = Array.from(Array(mouthTraitCount).keys());
+    }
+    if (hatArray.length === 0) {
       hatArray = Array.from(Array(hatTraitCount).keys());
     }
 
@@ -91,7 +112,7 @@ const generateAll = async () => {
     const genome = [ear, eye, nose, mouth, hat].join('_');
     // check if gemome already exists
     if (genomes.indexOf(genome) === -1) {
-      await generateSingle(ear, eye, nose, mouth, hat);
+      await generateSingle(i,ear, eye, nose, mouth, hat);
       genomes.push(genome);
     } else {
       i--;
