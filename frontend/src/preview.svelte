@@ -14,14 +14,14 @@
 		for (let i = 0; i < total; i++) {
 			images.push(`${basePath}${i.toString()}.png`);
 		}
-		console.log(images);
+		// console.log(images);
 		images = [...images];
 		// spin(1);
 		// get next image every 1 second
 		setInterval(() => {
 			if (rolling) {
 				current = (current + 1) % total;
-				console.log(images);
+				// console.log(images);
 			} else {
 				current = target;
 			}

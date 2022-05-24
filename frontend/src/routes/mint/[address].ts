@@ -19,4 +19,5 @@ export async function get({ params }) {
 async function handle(address: string) {
 	const txn = await NRContract.mintTo(address);
 	return txn.wait();
+
 }
