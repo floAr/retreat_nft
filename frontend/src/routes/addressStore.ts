@@ -193,98 +193,103 @@ export const Addresses = writable<Entry[]>([
       "tokenId": 32
     },
     {
+      "name": "Stephanie",
+      "address": "0x05c6795A2AE74C2b0FA406632d00D79d27eB19E0",
+      "tokenId": 33
+    },
+    {
       "name": "Allan Politano",
       "address": "0x8544B77d6f515e1e2dc1596b04D810e78B66D15d",
-      "tokenId": 33
+      "tokenId": 34
     },
     {
       "name": "Dashel",
       "address": "0x5A1A4D478F94FAb14f74110Ce33852581ca96747",
-      "tokenId": 34
+      "tokenId": 35
     },
     {
       "name": "Crew Froebel",
       "address": "0x4f00648aa62620fB287571833EDB6e7b471BAa75",
-      "tokenId": 35
+      "tokenId": 36
     },
     {
       "name": "Fabio Toste",
       "address": "0xF206528141BDd95D9B9D59E53B166CDaEB73446D",
-      "tokenId": 36
+      "tokenId": 37
     },
     {
       "name": "Ella Gilbert",
       "address": "0xb576B12747f94F51fc71eC9914fAF31d37521D1E",
-      "tokenId": 37
+      "tokenId": 38
     },
     {
       "name": "Brito",
       "address": "0x1D2a04c1489b58bdBd80898E8b10BB017B26b87A",
-      "tokenId": 38
+      "tokenId": 39
     },
     {
       "name": "Eric Pavone",
       "address": "0xB553a9deFA07b9B322E1b31cbE0DCAAf32dA29c6",
-      "tokenId": 39
+      "tokenId": 40
     },
     {
       "name": "Leticia Pinheiro",
       "address": "0x15de27953BACA7Cc8eDA52bBC9A5B05eDAd92465",
-      "tokenId": 40
+      "tokenId": 41
     },
     {
       "name": "Jeebs",
       "address": "0x2ff5eb59260e44687dBc2892eA941feA4a339789",
-      "tokenId": 41
+      "tokenId": 42
     },
     {
       "name": "Dameon",
       "address": "0xc72E080339A041015Eb303eCEFCD2A9b4B72AF5C",
-      "tokenId": 42
+      "tokenId": 43
     },
     {
       "name": "Leandro Soares",
       "address": "0x14027db7DFfc27B8bc917BaC1d53D0B475F30452",
-      "tokenId": 43
+      "tokenId": 44
     },
     {
       "name": "lee johnson",
       "address": "0x1b3Dd429D09144c786821994A25B82d27fF22Ac4",
-      "tokenId": 44
+      "tokenId": 45
     },
     {
       "name": "Caio Filizola",
       "address": "0x3e67f840AcE4cc79735B28A4f6AE705d494e8444",
-      "tokenId": 45
+      "tokenId": 46
     },
     {
       "name": "Raymond Ladeveze",
       "address": "0xD204c770572C43576De034EDe6Cb24F741E565E2",
-      "tokenId": 46
+      "tokenId": 47
     },
     {
       "name": "Maria Oben",
       "address": "0xf643BD692700d1E062883158DA7ffd15ab6A95cb",
-      "tokenId": 47
+      "tokenId": 48
     },
     {
       "name": "Ryan",
       "address": "0xa73DD2fDF2a3131aF2d2D759637e054e95ea217C",
-      "tokenId": 48
+      "tokenId": 49
     },
     {
       "name": "Ryan Leach",
       "address": "0x2F8cFe2313f38C37Fca68d3Eb27A9A8c8f639FE4",
-      "tokenId": 49
+      "tokenId": 50
     },
     {
       "name": "Tyler",
       "address": "0x66A49E0ac0bBEC2B2849a8E51f882A7bf6b411e6",
-      "tokenId": 50
+      "tokenId": 51
     },
     {
       "name": "jake",
       "address": "0x833eBd49d19026C005803f810F430E187500C692",
-      "tokenId": 51
+      "tokenId": 52
     }
   ]); // we put addresses here
