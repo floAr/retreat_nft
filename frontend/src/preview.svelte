@@ -48,11 +48,11 @@
 </script>
 
 <!-- show current image -->
-{#if !rolling}
+<!-- {#if !rolling}
     <img class="rolling" src={images[target]} />
-{:else}
+{:else} -->
 <div id="viewbox">
-	<div class={`wrapper ${getSpin()}`} id="slotmachine">
+	<div class={`wrapper ${getSpin()} ${rolling?'rolling':'stopped'}`} id="slotmachine">
 		<ul>
 			{#each images as image}
 				<li>
@@ -60,12 +60,12 @@
 				</li>
 			{/each}
 			<li>
-				<img src={images[0]} />
+				<img src={rolling?images[0]:images[target]} />
 			</li>
 		</ul>
 	</div>
 </div>
-{/if}
+<!-- {/if} -->
 <style>
 	#viewbox {
 		overflow: hidden;
@@ -94,9 +94,17 @@
 	#slotmachine {
 		/* animate slotmachine */		
 		
-		animation-iteration-count: infinite;
+
 		animation-timing-function: linear;
 	}
+
+    .rolling{
+        animation-iteration-count: infinite;
+    }
+
+    .stopped{
+        animation-iteration-count: 0;
+    }
 
 	img {
         max-width: 300px;
