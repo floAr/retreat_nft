@@ -70,15 +70,17 @@
 </div>
 <!-- {/if} -->
 <style>
-    	.trait {
+	.trait {
+			box-sizing: border-box;
 			margin: 0px 20px;
+			width: 20%;
 	}
 	.trait span {
 			display: inline-block;
 			color: #3E4353;
 			margin-bottom: 8px;
 	}
-        .trait-viewer {
+  .trait-viewer {
 			width: 250px;
 			height: 350px;
 			border: 2px solid #fff;
@@ -86,7 +88,7 @@
 	}
 	#viewbox {
 		overflow: hidden;
-		width: 300px;
+		/* width: 300px; */
 		height: 400px;
 		border: solid 1px #000;
 		position: relative;
@@ -102,8 +104,8 @@
 	}
 	#viewbox li {
 		display: block;
-		width: 300px;
-		height: 100%;
+		/* width: 300px; */
+		padding-top: 133.3333%;
 		text-align: center;
 		font-size: 170px;
 	}
@@ -125,8 +127,8 @@
     }
 
 	img {
-        max-width: 300px;
-        max-height: 500px;
+        /* max-width: 300px;
+        max-height: 500px; */
 		width: 100%;
 		height: auto;
 	}

@@ -59,6 +59,7 @@ import { onMount } from 'svelte';
         flex-direction: row;
         justify-content: space-around;
         align-items: center;
-        width: 100vw;    
+        /* width: 100%; */
+        padding: 4em;
     }
 </style>
