@@ -51,6 +51,8 @@
 <!-- {#if !rolling}
     <img class="rolling" src={images[target]} />
 {:else} -->
+<div class="trait">
+<span>{trait.toUpperCase()}</span>
 <div id="viewbox">
 	<div class={`wrapper ${getSpin()} ${rolling?'rolling':'stopped'}`} id="slotmachine">
 		<ul>
@@ -65,14 +67,30 @@
 		</ul>
 	</div>
 </div>
+</div>
 <!-- {/if} -->
 <style>
+    	.trait {
+			margin: 0px 20px;
+	}
+	.trait span {
+			display: inline-block;
+			color: #3E4353;
+			margin-bottom: 8px;
+	}
+        .trait-viewer {
+			width: 250px;
+			height: 350px;
+			border: 2px solid #fff;
+			border-radius: 10px;
+	}
 	#viewbox {
 		overflow: hidden;
 		width: 300px;
 		height: 400px;
 		border: solid 1px #000;
 		position: relative;
+        background-color: #fff;
 	}
 	#viewbox .wrapper {
 		position: relative;

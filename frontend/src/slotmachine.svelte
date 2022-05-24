@@ -43,7 +43,7 @@ import { onMount } from 'svelte';
 </script>
 
 <!-- 5 preview next to each other -->
-<div class="previews">
+<div class="previews trait-viewer">
 	<Preview trait="eyes" total={11} target={eyeTarget} rolling={eyeRolling} />
 	<Preview trait="ears" total={8} target={earTarget} rolling={earRolling} />
 	<Preview trait="nose" total={7} target={noseTarget} rolling={noseRolling} />
@@ -53,6 +53,7 @@ import { onMount } from 'svelte';
 
 
 <style>
+
     .previews {
         display: flex;
         flex-direction: row;
