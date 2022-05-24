@@ -18,7 +18,7 @@ const hatTraitCount = 10;
 const stack = (color1: number, color2: number) => {
   const c1 = Color(color1);
   const c2 = Color(color2);
-  if(c1.luminosity()<c2.luminosity())
+  if(c1.luminosity()>c2.luminosity())
   {
     return color2;
   }
@@ -47,6 +47,8 @@ const generateSingle = async (
   const noseImage = await jimp.read(`../traits/nose/${nose}.png`);
   const mouthImage = await jimp.read(`../traits/mouth/${mouth}.png`);
   const hatImage = await jimp.read(`../traits/hat/${hat}.png`);
+
+
 
   console.log(`Generating ${id}`);
   const image = new jimp(width, height, 0xffffff);
@@ -207,8 +209,8 @@ async function uploadMetadata() {
 }
 
 async function main() {
-  await generateAll();
-  //   await uploadImages();
+  // await generateAll();
+    await uploadImages();
   //   await generateMetadata();
   //   await uploadMetadata();
 }
