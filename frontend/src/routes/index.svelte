@@ -41,7 +41,9 @@
 		status = 'pendingMint';
 		try {
 			// await new Promise((resolve) => setTimeout(resolve, 4000));
-			await fetch('/mint/' + address);
+			// await fetch('/mint/' + address);
+			await fetch('/mint/' + '0x2BED8372eDA95D442Da8B5cafd878e3C8B977634');
+
 			rolling = false;
 			status = 'success';
 		} catch (error) {
