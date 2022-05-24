@@ -10,6 +10,7 @@
 	export let target: number;
 
 	onMount(async () => {
+        console.log(target)
 		// generate images
 		for (let i = 0; i < total; i++) {
 			images.push(`${basePath}${i.toString()}.png`);
@@ -48,11 +49,12 @@
 </script>
 
 <!-- show current image -->
-<!-- {#if !rolling}
-    <img class="rolling" src={images[target]} />
-{:else} -->
+
 <div class="trait">
 <span>{trait.toUpperCase()}</span>
+{#if !rolling}
+    <img class="rolling" src={images[target]} />
+{:else}
 <div id="viewbox">
 	<div class={`wrapper ${getSpin()} ${rolling?'rolling':'stopped'}`} id="slotmachine">
 		<ul>
@@ -67,8 +69,8 @@
 		</ul>
 	</div>
 </div>
+{/if}
 </div>
-<!-- {/if} -->
 <style>
     	.trait {
 			margin: 0px 20px;

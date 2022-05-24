@@ -8,25 +8,21 @@
 <script lang="ts">
 	import Slotmachine from '../slotmachine.svelte';
 	import { onMount } from 'svelte';
-
-	import {
-		connected,
-		provider,
-		chainId,
-		signer,
-		signerAddress,
-		contracts,
-		defaultEvmStores
-	} from 'svelte-ethers-store';
 	import { getNext } from './addressStore';
 	import { genomes } from '../genomes';
 	export let name: string;
 	export let address: string;
-	let genome: { ear: number; eye: number; nose: number; mouth: number; hat: number };
+
+	let ear = 0;
+	let eye = 0;
+	let nose = 0;
+	let mouth = 0;
+	let hat = 0;
 
 	type Status = 'uninitialized' | 'pendingMint' | 'success' | 'failure';
 
 	let status: Status = 'success';
+	let rolling = true;
 
 	onMount(async () => {
 		console.log(genomes);
@@ -37,14 +33,14 @@
 		name = next.name;
 		address = next.address;
 
-		genome = {
-			ear: genomes[next.tokenId][0],
-			eye: genomes[next.tokenId][1],
-			nose: genomes[next.tokenId][2],
-			mouth: genomes[next.tokenId][3],
-			hat: genomes[next.tokenId][4]
-		};
+		(ear = genomes[next.tokenId][0]),
+			(eye = genomes[next.tokenId][1]),
+			(nose = genomes[next.tokenId][2]),
+			(mouth = genomes[next.tokenId][3]),
+			(hat = genomes[next.tokenId][4]);
+
 		status = 'uninitialized';
+		rolling = true;
 	};
 
 	// get name from svelte load function
@@ -54,6 +50,7 @@
 			// mint
 			// wait 4 seconds
 			await new Promise((resolve) => setTimeout(resolve, 4000));
+			rolling = false;
 			status = 'success';
 		} catch (error) {
 			status = 'failure';
@@ -62,9 +59,16 @@
 </script>
 
 <img class="nifty-logo" src="nifty-logo.png" />
-<h1>Chunkz</h1>
+<h1>Chunkz {rolling}</h1>
 
-<Slotmachine isRolling={true} />
+<Slotmachine
+	isRolling={rolling}
+	earTarget={ear}
+	eyeTarget={eye}
+	hatTarget={hat}
+	mouthTarget={mouth}
+	noseTarget={nose}
+/>
 
 <div class="traits-area">
 	<div class="trait">

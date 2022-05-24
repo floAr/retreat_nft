@@ -21,7 +21,7 @@ import { onMount } from 'svelte';
        // check if we are rolling every second
          setInterval(() => {
               if (!isRolling) {
-                  console.log(`${eyeRolling}, ${earRolling}, ${noseRolling}, ${mouthRolling}, ${hatRolling}`)
+                  console.log(`${eyeTarget}, ${earTarget}, ${noseTarget}, ${mouthTarget}, ${hatTarget}`);
                if(eyeRolling){
                    eyeRolling = false;
                } else 
@@ -38,6 +38,13 @@ import { onMount } from 'svelte';
                      hatRolling = false;
                 }
               }
+              else{
+                eyeRolling = true;
+                earRolling = true;
+                noseRolling = true;
+                mouthRolling = true;
+                hatRolling = true;
+              }
          }, 500)
     })
 </script>
@@ -50,7 +57,6 @@ import { onMount } from 'svelte';
 	<Preview trait="mouth" total={7} target={mouthTarget} rolling={mouthRolling} />
 	<Preview trait="hat" total={9} target={hatTarget} rolling={hatRolling} />
 </div>
-
 
 <style>
 
