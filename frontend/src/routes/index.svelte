@@ -24,11 +24,11 @@
 	let status: Status = 'success';
 	let rolling = true;
 
-	onMount(async () => {
-		console.log(genomes);
-	});
+	onMount(async () => {});
 
 	const goNext = () => {
+        status = 'uninitialized';
+		rolling = true;
 		var next = getNext();
 		name = next.name;
 		address = next.address;
@@ -39,8 +39,7 @@
 			(mouth = genomes[next.tokenId][3]),
 			(hat = genomes[next.tokenId][4]);
 
-		status = 'uninitialized';
-		rolling = true;
+	
 	};
 
 	// get name from svelte load function
@@ -59,7 +58,7 @@
 </script>
 
 <img class="nifty-logo" src="nifty-logo.png" />
-<h1>Chunkz {rolling}</h1>
+<h1>Chunkz</h1>
 
 <Slotmachine
 	isRolling={rolling}
@@ -72,47 +71,54 @@
 
 <div class="traits-area">
 	<div class="trait">
-		<span>Hat</span>
+		<!-- <span>Hat</span> -->
 		<div class="trait-viewer" />
 	</div>
 	<div class="trait">
-		<span>Eyes</span>
+		<!-- <span>Eyes</span> -->
 		<div class="trait-viewer" />
 	</div>
 	<div class="trait">
-		<span>Ears</span>
+		<!-- <span>Ears</span> -->
 		<div class="trait-viewer" />
 	</div>
 	<div class="trait">
-		<span>Nose</span>
+		<!-- <span>Nose</span> -->
 		<div class="trait-viewer" />
 	</div>
 	<div class="trait">
-		<span>Mouth</span>
+		<!-- <span>Mouth</span> -->
 		<div class="trait-viewer" />
 	</div>
 </div>
 
-<h2>Hey {name}!</h2>
+<h2>Hey {name}! ({address})</h2>
 <h3>Get in loser, we're minting Chunkz!</h3>
 
+<div class="spinner-box">
 {#if status === 'pendingMint'}
-	<p>Rolling...</p>
-{/if}
-
-{#if status === 'uninitialized'}
+	<!-- SPINNING SQUARES -->
+    <div class="configure-border-1">  
+      <div class="configure-core"></div>
+    </div>  
+    <div class="configure-border-2">
+      <div class="configure-core"></div>
+    </div> 
+    {/if}
+    
+    {#if status === 'uninitialized'}
 	<button
-		class="mintbtn btn"
-		on:click={async (_) => {
-			await mintNow();
-		}}>Mint your Chunk</button
+    class="mintbtn btn"
+    on:click={async (_) => {
+        await mintNow();
+    }}>Mint your Chunk</button
 	>
-{:else if status === 'success'}
+    {:else if status === 'success'}
 	<button on:click={() => goNext()} class="btn">Next</button>
-{/if}
+    {/if}
+</div>
 
-<h3 style="margin-bottom: 16px;">Wallet Address</h3>
-<p style="margin:0px;">{address}</p>
+
 
 <style>
 	.nifty-logo {
@@ -138,4 +144,83 @@
 		background-color: #cf6ce4;
 		cursor: pointer;
 	}
+    
+.spinner-box {
+  width: 100%;
+  height: 300px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: transparent;
+}
+
+/* X-ROTATING BOXES */
+
+.configure-border-1 {
+  width: 115px;
+  height: 115px;
+  padding: 3px;
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: rgb(255, 108, 248);
+  animation: configure-clockwise 3s ease-in-out 0s infinite alternate;
+}
+
+.configure-border-2 {
+  width: 115px;
+  height: 115px;
+  padding: 3px;
+  left: -115px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: rgb(63,249,220);
+  transform: rotate(45deg);
+  animation: configure-xclockwise 3s ease-in-out 0s infinite alternate;
+}
+
+.configure-core {
+  width: 100%;
+  height: 100%;
+  background-color: transparent;
+}
+
+
+@keyframes configure-clockwise {
+  0% {
+    transform: rotate(0);
+  }
+  25% {
+    transform: rotate(90deg);
+  }
+  50% {
+    transform: rotate(180deg);
+  }
+  75% {
+    transform: rotate(270deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes configure-xclockwise {
+  0% {
+    transform: rotate(45deg);
+  }
+  25% {
+    transform: rotate(-45deg);
+  }
+  50% {
+    transform: rotate(-135deg);
+  }
+  75% {
+    transform: rotate(-225deg);
+  }
+  100% {
+    transform: rotate(-315deg);
+  }
+}
 </style>
