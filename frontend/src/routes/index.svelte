@@ -6,6 +6,7 @@
 	import { genomes } from '../genomes';
 	export let name: string;
 	export let address: string;
+    let tokenId:number;
 
 	let ear = 0;
 	let eye = 0;
@@ -26,6 +27,7 @@
 		var next = getNext();
 		name = next.name;
 		address = next.address;
+        tokenId = next.tokenId;
 
 		(ear = genomes[next.tokenId][0]),
 			(eye = genomes[next.tokenId][1]),
@@ -52,6 +54,7 @@
 <h1>Chunkz</h1>
 
 <Slotmachine
+    tokenId={tokenId}
 	isRolling={rolling ? 'Rolling' : 'Stopping'}
 	earTarget={ear}
 	eyeTarget={eye}
@@ -123,7 +126,8 @@
 		background-color: #e87aff;
 		color: #fff;
 		border-radius: calc(97px / 2);
-		height: 48px;
+		height: 80px;
+        width: 30vw;
 		padding: 0px 24px;
 		border: none;
 		display: inline-block;
@@ -136,7 +140,7 @@
 
 	.spinner-box {
 		width: 100%;
-		height: 300px;
+		height: 200px;
 		display: flex;
 		justify-content: center;
 		align-items: center;

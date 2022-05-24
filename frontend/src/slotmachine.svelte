@@ -1,10 +1,13 @@
 <script lang="ts">
+   import { ConfettiExplosion } from 'svelte-confetti-explosion'
 	import { onMount } from 'svelte';
 	import { fade, fly } from 'svelte/transition';
 	import Preview from './preview.svelte';
 
 	const ipfsBaseHash =
 		'https://expansionpunks.mypinata.cloud/ipfs/bafybeidytvy5skqfaauow6nxnbboeyxt6gch6c4g6to2edkhwuzf52gwwa/';
+
+    export let tokenId:number;
 
 	export let isRolling: 'Rolling' | 'Stopping' | 'Final' = 'Rolling';
 
@@ -36,6 +39,7 @@
 					hatRolling = false;
 				} else {
 					isRolling = 'Final';
+                    confetti.render();
 				}
 			} else {
 				eyeRolling = true;
@@ -57,7 +61,11 @@
 		<Preview trait="mouth" total={7} target={mouthTarget} rolling={mouthRolling} />
 		<Preview trait="hat" total={9} target={hatTarget} rolling={hatRolling} />
 	{:else}
-		<img src={`${ipfsBaseHash}${0}.png`} class="final" in:fly="{{ y: 200, duration: 2000 }}" out:fade />
+		<img src={`${ipfsBaseHash}${tokenId}.png`} class="final" in:fly="{{ y: 200, duration: 2000 }}" out:fade />
+        <div class="confetti">
+
+            <ConfettiExplosion />
+        </div>
 	{/if}
 </div>
 
@@ -74,4 +82,17 @@
 		height: 400px;
 		width: 300px;
 	}
+    .confetti {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        pointer-events: none;
+        /* center my children */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        
+    }
 </style>
