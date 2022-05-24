@@ -39,7 +39,6 @@
 					hatRolling = false;
 				} else {
 					isRolling = 'Final';
-                    confetti.render();
 				}
 			} else {
 				eyeRolling = true;
@@ -93,6 +92,6 @@
         display: flex;
         justify-content: center;
         align-items: center;
-        
+
     }
 </style>
