@@ -1,5 +1,10 @@
 <script lang="ts">
+import { onMount } from 'svelte';
+
 	import Preview from './preview.svelte';
+
+    export let isRolling = true;
+
 	export let eyeTarget: number = 0;
 	export let earTarget: number = 0;
 	export let noseTarget: number = 0;
@@ -11,6 +16,30 @@
 	let noseRolling = true;
 	let mouthRolling = true;
 	let hatRolling = true;
+
+    onMount(async () => {
+       // check if we are rolling every second
+         setInterval(() => {
+              if (!isRolling) {
+                  console.log(`${eyeRolling}, ${earRolling}, ${noseRolling}, ${mouthRolling}, ${hatRolling}`)
+               if(eyeRolling){
+                   eyeRolling = false;
+               } else 
+                if(earRolling){
+                     earRolling = false;
+                } else
+                if(noseRolling){
+                     noseRolling = false;
+                } else
+                if(mouthRolling){
+                     mouthRolling = false;
+                } else
+                if(hatRolling){
+                     hatRolling = false;
+                }
+              }
+         }, 500)
+    })
 </script>
 
 <!-- 5 preview next to each other -->
