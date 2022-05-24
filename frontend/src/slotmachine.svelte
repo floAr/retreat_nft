@@ -60,7 +60,7 @@
 		<Preview trait="mouth" total={7} target={mouthTarget} rolling={mouthRolling} />
 		<Preview trait="hat" total={9} target={hatTarget} rolling={hatRolling} />
 	{:else}
-		<img src={`${ipfsBaseHash}${tokenId}.png`} class="final" in:fly="{{ y: 200, duration: 2000 }}" out:fade />
+		<img src={`${ipfsBaseHash}${tokenId}.png`} class="final" in:fly="{{ y: 200, duration: 2000 }}" />
         <div class="confetti">
 
             <ConfettiExplosion />
