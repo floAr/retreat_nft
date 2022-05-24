@@ -63,33 +63,33 @@ export const Addresses = writable<Entry[]>([
       "tokenId": 6
     },
     {
+      "name": "Spencer (Speezy F Baby)",
+      "address": "0x8F4359D1C2166452b5e7a02742D6fe9ca5448FDe",
+      "tokenId": 7
+    },
+    {
       "name": "John",
       "address": "0xD913eB74E5D034E32753ce137e1342B9F708057E",
-      "tokenId": 7
+      "tokenId": 8
     },
     {
       "name": "Ale",
       "address": "0x3bcE66194e0a77a93b4FEdb6eddD7FB0dFADeD92",
-      "tokenId": 8
+      "tokenId": 9
     },
     {
       "name": "Kresimir Capin",
       "address": "0xcF4a65d06545E6aDeD2B353EFEC16651e90dE3Cc",
-      "tokenId": 9
+      "tokenId": 10
     },
     {
       "name": "Oliver",
       "address": "0x5BF64591C5D64687678771e2027fDCF41CC648C1",
-      "tokenId": 10
+      "tokenId": 11
     },
     {
       "name": "Tasheme /vers la Lune",
       "address": "0x964d71fa3814f2ea30315a112f5e9e57ff0e0b2a",
-      "tokenId": 11
-    },
-    {
-      "name": "",
-      "address": "",
       "tokenId": 12
     },
     {
@@ -178,128 +178,113 @@ export const Addresses = writable<Entry[]>([
       "tokenId": 29
     },
     {
-      "name": "Spencer (Speezy F Baby)",
-      "address": "0x8F4359D1C2166452b5e7a02742D6fe9ca5448FDe",
-      "tokenId": 30
-    },
-    {
       "name": "Kavan",
       "address": "0x7C7F66DF5Ec08FB8bfB7444Ca52aB322F9C24921",
-      "tokenId": 31
+      "tokenId": 30
     },
     {
       "name": "Brian Rosner",
       "address": "0xdf83966583e71f9f90C9fDFD21675BA05984A82E",
-      "tokenId": 32
+      "tokenId": 31
     },
     {
       "name": "Aaron",
       "address": "0x2BD812200D8e54eAdFd7c3caE0f7Afd499a3244d",
-      "tokenId": 33
+      "tokenId": 32
     },
     {
       "name": "Allan Politano",
       "address": "0x8544B77d6f515e1e2dc1596b04D810e78B66D15d",
-      "tokenId": 34
+      "tokenId": 33
     },
     {
       "name": "Dashel",
       "address": "0x5A1A4D478F94FAb14f74110Ce33852581ca96747",
-      "tokenId": 35
+      "tokenId": 34
     },
     {
       "name": "Crew Froebel",
       "address": "0x4f00648aa62620fB287571833EDB6e7b471BAa75",
-      "tokenId": 36
+      "tokenId": 35
     },
     {
       "name": "Fabio Toste",
       "address": "0xF206528141BDd95D9B9D59E53B166CDaEB73446D",
-      "tokenId": 37
+      "tokenId": 36
     },
     {
       "name": "Ella Gilbert",
       "address": "0xb576B12747f94F51fc71eC9914fAF31d37521D1E",
-      "tokenId": 38
-    },
-    {
-      "name": "",
-      "address": "",
-      "tokenId": 39
+      "tokenId": 37
     },
     {
       "name": "Brito",
       "address": "0x1D2a04c1489b58bdBd80898E8b10BB017B26b87A",
-      "tokenId": 40
+      "tokenId": 38
     },
     {
       "name": "Eric Pavone",
       "address": "0xB553a9deFA07b9B322E1b31cbE0DCAAf32dA29c6",
-      "tokenId": 41
+      "tokenId": 39
     },
     {
       "name": "Leticia Pinheiro",
       "address": "0x15de27953BACA7Cc8eDA52bBC9A5B05eDAd92465",
-      "tokenId": 42
+      "tokenId": 40
     },
     {
       "name": "Jeebs",
       "address": "0x2ff5eb59260e44687dBc2892eA941feA4a339789",
-      "tokenId": 43
-    },
-    {
-      "name": "",
-      "address": "",
-      "tokenId": 44
+      "tokenId": 41
     },
     {
       "name": "Dameon",
       "address": "0xc72E080339A041015Eb303eCEFCD2A9b4B72AF5C",
-      "tokenId": 45
+      "tokenId": 42
     },
     {
       "name": "Leandro Soares",
       "address": "0x14027db7DFfc27B8bc917BaC1d53D0B475F30452",
-      "tokenId": 46
+      "tokenId": 43
     },
     {
       "name": "lee johnson",
       "address": "0x1b3Dd429D09144c786821994A25B82d27fF22Ac4",
-      "tokenId": 47
+      "tokenId": 44
     },
     {
       "name": "Caio Filizola",
       "address": "0x3e67f840AcE4cc79735B28A4f6AE705d494e8444",
-      "tokenId": 48
+      "tokenId": 45
     },
     {
       "name": "Raymond Ladeveze",
       "address": "0xD204c770572C43576De034EDe6Cb24F741E565E2",
-      "tokenId": 49
+      "tokenId": 46
     },
     {
       "name": "Maria Oben",
       "address": "0xf643BD692700d1E062883158DA7ffd15ab6A95cb",
-      "tokenId": 50
+      "tokenId": 47
     },
     {
       "name": "Ryan",
       "address": "0xa73DD2fDF2a3131aF2d2D759637e054e95ea217C",
-      "tokenId": 51
+      "tokenId": 48
     },
     {
       "name": "Ryan Leach",
       "address": "0x2F8cFe2313f38C37Fca68d3Eb27A9A8c8f639FE4",
-      "tokenId": 52
+      "tokenId": 49
     },
     {
       "name": "Tyler",
       "address": "0x66A49E0ac0bBEC2B2849a8E51f882A7bf6b411e6",
-      "tokenId": 53
+      "tokenId": 50
     },
     {
       "name": "jake",
       "address": "0x833eBd49d19026C005803f810F430E187500C692",
-      "tokenId": 54
+      "tokenId": 51
     }
   ]); // we put addresses here
