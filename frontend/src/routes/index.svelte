@@ -114,6 +114,8 @@
 	{/if}
 </div>
 
+<button on:click={() => goNext()} class="btn">Skip</button>
+
 <style>
 	.nifty-logo {
 		width: 80px;
