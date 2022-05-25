@@ -15,11 +15,12 @@ pragma solidity ^0.8.4;
 import "erc721a/contracts/ERC721A.sol";
 import "@openzeppelin/contracts/access/Ownable.sol";
 import "@openzeppelin/contracts/security/ReentrancyGuard.sol";
+import "@openzeppelin/contracts/utils/Strings.sol";
 
 contract NiftyChunkz is ERC721A, Ownable, ReentrancyGuard {
 
     string public _tokenUriBase;
-    uint256 public _maxTokens = 45;
+    uint256 public _maxTokens = 100;
 
     modifier canMint() {
         require(totalSupply() + 1 <= _maxTokens, "Supply reached");
@@ -28,7 +29,7 @@ contract NiftyChunkz is ERC721A, Ownable, ReentrancyGuard {
 
     constructor() ERC721A("Nifty Chunkz", "CHUNKZ") {        
         // set ipfs base url
-        _tokenUriBase = "ipfs://IPFS_BASE_URL";
+        _tokenUriBase = "ipfs://bafybeiddkbn62yb5avlpktrwsw7adi43fw37wmicunietwosj2t2pxtm4y";
     }
 
     // ------- Public read-only function --------
@@ -45,7 +46,7 @@ contract NiftyChunkz is ERC721A, Ownable, ReentrancyGuard {
     {
         require(_exists(tokenId), "Nonexistent token");
 
-        return string(abi.encodePacked(_tokenUriBase, "/", tokenId, ".json"));
+        return string(abi.encodePacked(_tokenUriBase, "/", Strings.toString(tokenId), ".json"));
     }
     // ------------------------------------------
 
